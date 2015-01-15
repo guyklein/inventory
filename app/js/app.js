@@ -4,7 +4,7 @@
 
 var inventoryApp = angular.module('inventoryApp', [
   'ngRoute',
-  'ui.bootstrap'
+  //'ui.bootstrap'
 ]);
 
 inventoryApp.config(['$routeProvider',

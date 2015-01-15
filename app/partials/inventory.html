@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title></title>
+    </head>
+    <body>
+        <div class="panel panel-primary" style="width: 98%; height: 880px; position: relative; left: 20px;">
+            <div class="panel-heading">
+                <h3 class="panel-title">Home Inventory by Guy Klein</h3>
+            </div>
+            <div class="panel-body">
+                <div style="float: left; margin-right: 20px;">
+                    <div class="tree">
+                        <ul>
+                            <li>
+                                <span><i class="icon-calendar"></i> 2013, Week 2</span>
+                                <ul>
+                                    <li>
+                                        <span class="badge badge-success"><i class="icon-minus-sign"></i> Monday, January 7: 8.00 hours</span>
+                                        <ul>
+                                            <li>
+                                                <a href=""><span><i class="icon-time"></i> 8.00</span> &ndash; Changed CSS to accomodate...</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <span class="badge badge-success"><i class="icon-minus-sign"></i> Tuesday, January 8: 8.00 hours</span>
+                                        <ul>
+                                            <li>
+                                                <span><i class="icon-time"></i> 6.00</span> &ndash; <a href="">Altered code...</a>
+                                            </li>
+                                            <li>
+                                                <span><i class="icon-time"></i> 2.00</span> &ndash; <a href="">Simplified our approach to...</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <span class="badge badge-warning"><i class="icon-minus-sign"></i> Wednesday, January 9: 6.00 hours</span>
+                                        <ul>
+                                            <li>
+                                                <a href=""><span><i class="icon-time"></i> 3.00</span> &ndash; Fixed bug caused by...</a>
+                                            </li>
+                                            <li>
+                                                <a href=""><span><i class="icon-time"></i> 3.00</span> &ndash; Comitting latest code to Git...</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <span class="badge badge-important"><i class="icon-minus-sign"></i> Wednesday, January 9: 4.00 hours</span>
+                                        <ul>
+                                            <li>
+                                                <a href=""><span><i class="icon-time"></i> 2.00</span> &ndash; Create component that...</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <span><i class="icon-calendar"></i> 2013, Week 3</span>
+                                <ul>
+                                    <li>
+                                        <span class="badge badge-success"><i class="icon-minus-sign"></i> Monday, January 14: 8.00 hours</span>
+                                        <ul>
+                                            <li>
+                                                <span><i class="icon-time"></i> 7.75</span> &ndash; <a href="">Writing documentation...</a>
+                                            </li>
+                                            <li>
+                                                <span><i class="icon-time"></i> 0.25</span> &ndash; <a href="">Reverting code back to...</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div style="float: inherit; margin-left: 450px;">
+                    <div class="panel panel-info">
+                        <div class="panel-body">
+                            <div ng-controller="TabsCtrl">
+                                <tabset justified="true" style="height: 60%;">
+                                    <tab heading="Main">
+                                        Main
+                                    </tab>
+                                    <tab heading="Advanced">
+                                        <h4>Popup</h4>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <p class="input-group">
+                                                        <input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="dt" is-open="opened" min-date="minDate" max-date="'2015-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
+                                                        <span class="input-group-btn">
+                                                        <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                                                        </span>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <label>Format:</label> <select class="form-control" ng-model="format" ng-options="f for f in formats"><option></option></select>
+                                                </div>
+                                            </div>
+
+                                            <hr />
+                                            <button type="button" class="btn btn-sm btn-info" ng-click="today()">Today</button>
+                                            <button type="button" class="btn btn-sm btn-default" ng-click="dt = '2009-08-24'">2009-08-24</button>
+                                            <button type="button" class="btn btn-sm btn-danger" ng-click="clear()">Clear</button>
+                                            <button type="button" class="btn btn-sm btn-default" ng-click="toggleMin()" tooltip="After today restriction">Min date</button>
+                                        
+                                    </tab>
+                                    <tab heading="Demo">
+                                        <div ng-controller="DatepickerDemoCtrl">
+                                            <pre>Selected date is: <em>{{dt | date:'fullDate' }}</em></pre>
+
+                                            <h4>Inline</h4>
+                                            <div style="display:inline-block; min-height:290px;">
+                                                <datepicker ng-model="dt" min-date="minDate" show-weeks="true" class="well well-sm"></datepicker>
+                                            </div>
+
+                                        </div>
+                                    </tab>
+                                </tabset>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
